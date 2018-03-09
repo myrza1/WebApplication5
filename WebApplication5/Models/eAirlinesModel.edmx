@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище eAirlinesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "eAirlines.dbo.ArrivalOrderView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="ArrivalOrderView">
+          <Key>
+            <PropertyRef Name="flightNumber" />
+            <PropertyRef Name="scheduledTime" />
+            <PropertyRef Name="arrivalFlightId" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="status" Type="nvarchar" MaxLength="30" />
+          <Property Name="isFinished" Type="bit" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="flightNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="scheduledTime" Type="datetime" Nullable="false" />
+          <Property Name="manni" Type="float" />
+          <Property Name="start_time" Type="datetime" />
+          <Property Name="end_time" Type="datetime" />
+          <Property Name="arrival_id" Type="bigint" />
+          <Property Name="arrivalFlightId" Type="bigint" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "eAirlines.dbo.DepartureOrderView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="DepartureOrderView">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="departureFlightId" />
+            <PropertyRef Name="flightNumber" />
+            <PropertyRef Name="scheduledTime" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="status" Type="nvarchar" MaxLength="30" />
+          <Property Name="isFinished" Type="bit" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="manni" Type="float" />
+          <Property Name="start_time" Type="datetime" />
+          <Property Name="end_time" Type="datetime" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="departureFlightId" Type="bigint" Nullable="false" />
+          <Property Name="departure_id" Type="bigint" />
+          <Property Name="flightNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="scheduledTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "eAirlines.dbo.movementsFlightsView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="movementsFlightsView">
+          <Key>
+            <PropertyRef Name="registration" />
+            <PropertyRef Name="iataCode" />
+            <PropertyRef Name="airportIATA" />
+            <PropertyRef Name="movementId" />
+          </Key>
+          <Property Name="registration" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="iataCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="arr_flightNumer" Type="nvarchar" MaxLength="10" />
+          <Property Name="arr_scheduleTime" Type="datetime" />
+          <Property Name="airlineIATA" Type="nvarchar" MaxLength="10" />
+          <Property Name="MTOW" Type="int" />
+          <Property Name="airportIATA" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="airportICAO" Type="nvarchar" MaxLength="10" />
+          <Property Name="airportName" Type="nvarchar" MaxLength="80" />
+          <Property Name="dep_flightNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="dep_schedTime" Type="datetime" />
+          <Property Name="flight_to" Type="nvarchar(max)" />
+          <Property Name="flight_from" Type="nvarchar(max)" />
+          <Property Name="arrivalFlightId" Type="bigint" />
+          <Property Name="departureFlightId" Type="bigint" />
+          <Property Name="movementId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище eAirlinesModelContainer">
+          <EntitySet Name="ArrivalOrderView" EntityType="Self.ArrivalOrderView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ArrivalOrderView].[name] AS [name], 
+    [ArrivalOrderView].[status] AS [status], 
+    [ArrivalOrderView].[isFinished] AS [isFinished], 
+    [ArrivalOrderView].[isDeleted] AS [isDeleted], 
+    [ArrivalOrderView].[flightNumber] AS [flightNumber], 
+    [ArrivalOrderView].[scheduledTime] AS [scheduledTime], 
+    [ArrivalOrderView].[manni] AS [manni], 
+    [ArrivalOrderView].[start_time] AS [start_time], 
+    [ArrivalOrderView].[end_time] AS [end_time], 
+    [ArrivalOrderView].[arrival_id] AS [arrival_id], 
+    [ArrivalOrderView].[arrivalFlightId] AS [arrivalFlightId], 
+    [ArrivalOrderView].[id] AS [id]
+    FROM [dbo].[ArrivalOrderView] AS [ArrivalOrderView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DepartureOrderView" EntityType="Self.DepartureOrderView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DepartureOrderView].[name] AS [name], 
+    [DepartureOrderView].[status] AS [status], 
+    [DepartureOrderView].[isFinished] AS [isFinished], 
+    [DepartureOrderView].[isDeleted] AS [isDeleted], 
+    [DepartureOrderView].[manni] AS [manni], 
+    [DepartureOrderView].[start_time] AS [start_time], 
+    [DepartureOrderView].[end_time] AS [end_time], 
+    [DepartureOrderView].[id] AS [id], 
+    [DepartureOrderView].[departureFlightId] AS [departureFlightId], 
+    [DepartureOrderView].[departure_id] AS [departure_id], 
+    [DepartureOrderView].[flightNumber] AS [flightNumber], 
+    [DepartureOrderView].[scheduledTime] AS [scheduledTime]
+    FROM [dbo].[DepartureOrderView] AS [DepartureOrderView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="movementsFlightsView" EntityType="Self.movementsFlightsView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [movementsFlightsView].[registration] AS [registration], 
+    [movementsFlightsView].[iataCode] AS [iataCode], 
+    [movementsFlightsView].[arr_flightNumer] AS [arr_flightNumer], 
+    [movementsFlightsView].[arr_scheduleTime] AS [arr_scheduleTime], 
+    [movementsFlightsView].[airlineIATA] AS [airlineIATA], 
+    [movementsFlightsView].[MTOW] AS [MTOW], 
+    [movementsFlightsView].[airportIATA] AS [airportIATA], 
+    [movementsFlightsView].[airportICAO] AS [airportICAO], 
+    [movementsFlightsView].[airportName] AS [airportName], 
+    [movementsFlightsView].[dep_flightNumber] AS [dep_flightNumber], 
+    [movementsFlightsView].[dep_schedTime] AS [dep_schedTime], 
+    [movementsFlightsView].[flight_to] AS [flight_to], 
+    [movementsFlightsView].[flight_from] AS [flight_from], 
+    [movementsFlightsView].[arrivalFlightId] AS [arrivalFlightId], 
+    [movementsFlightsView].[departureFlightId] AS [departureFlightId], 
+    [movementsFlightsView].[movementId] AS [movementId]
+    FROM [dbo].[movementsFlightsView] AS [movementsFlightsView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eAirlinesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ArrivalOrderView">
+          <Key>
+            <PropertyRef Name="flightNumber" />
+            <PropertyRef Name="scheduledTime" />
+            <PropertyRef Name="arrivalFlightId" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="isFinished" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="flightNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="scheduledTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="manni" Type="Double" />
+          <Property Name="start_time" Type="DateTime" Precision="3" />
+          <Property Name="end_time" Type="DateTime" Precision="3" />
+          <Property Name="arrival_id" Type="Int64" />
+          <Property Name="arrivalFlightId" Type="Int64" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="movementsFlightsView">
+          <Key>
+            <PropertyRef Name="registration" />
+            <PropertyRef Name="iataCode" />
+            <PropertyRef Name="airportIATA" />
+            <PropertyRef Name="movementId" />
+          </Key>
+          <Property Name="registration" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="iataCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="arr_flightNumer" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="arr_scheduleTime" Type="DateTime" Precision="3" />
+          <Property Name="airlineIATA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MTOW" Type="Int32" />
+          <Property Name="airportIATA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="airportICAO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="airportName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="dep_flightNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="dep_schedTime" Type="DateTime" Precision="3" />
+          <Property Name="flight_to" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="flight_from" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="arrivalFlightId" Type="Int64" />
+          <Property Name="departureFlightId" Type="Int64" />
+          <Property Name="movementId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="eAirlinesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ArrivalOrderView" EntityType="Self.ArrivalOrderView" />
+          <EntitySet Name="movementsFlightsView" EntityType="Self.movementsFlightsView" />
+          <EntitySet Name="DepartureOrderView" EntityType="eAirlinesModel.DepartureOrderView" />
+        </EntityContainer>
+        <EntityType Name="DepartureOrderView">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="departureFlightId" />
+            <PropertyRef Name="flightNumber" />
+            <PropertyRef Name="scheduledTime" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="isFinished" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="manni" Type="Double" />
+          <Property Name="start_time" Type="DateTime" Precision="3" />
+          <Property Name="end_time" Type="DateTime" Precision="3" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="departureFlightId" Type="Int64" Nullable="false" />
+          <Property Name="departure_id" Type="Int64" />
+          <Property Name="flightNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="scheduledTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище eAirlinesModelContainer" CdmEntityContainer="eAirlinesEntities">
+          <EntitySetMapping Name="ArrivalOrderView">
+            <EntityTypeMapping TypeName="eAirlinesModel.ArrivalOrderView">
+              <MappingFragment StoreEntitySet="ArrivalOrderView">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="isFinished" ColumnName="isFinished" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="flightNumber" ColumnName="flightNumber" />
+                <ScalarProperty Name="scheduledTime" ColumnName="scheduledTime" />
+                <ScalarProperty Name="manni" ColumnName="manni" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="arrival_id" ColumnName="arrival_id" />
+                <ScalarProperty Name="arrivalFlightId" ColumnName="arrivalFlightId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="movementsFlightsView">
+            <EntityTypeMapping TypeName="eAirlinesModel.movementsFlightsView">
+              <MappingFragment StoreEntitySet="movementsFlightsView">
+                <ScalarProperty Name="registration" ColumnName="registration" />
+                <ScalarProperty Name="iataCode" ColumnName="iataCode" />
+                <ScalarProperty Name="arr_flightNumer" ColumnName="arr_flightNumer" />
+                <ScalarProperty Name="arr_scheduleTime" ColumnName="arr_scheduleTime" />
+                <ScalarProperty Name="airlineIATA" ColumnName="airlineIATA" />
+                <ScalarProperty Name="MTOW" ColumnName="MTOW" />
+                <ScalarProperty Name="airportIATA" ColumnName="airportIATA" />
+                <ScalarProperty Name="airportICAO" ColumnName="airportICAO" />
+                <ScalarProperty Name="airportName" ColumnName="airportName" />
+                <ScalarProperty Name="dep_flightNumber" ColumnName="dep_flightNumber" />
+                <ScalarProperty Name="dep_schedTime" ColumnName="dep_schedTime" />
+                <ScalarProperty Name="flight_to" ColumnName="flight_to" />
+                <ScalarProperty Name="flight_from" ColumnName="flight_from" />
+                <ScalarProperty Name="arrivalFlightId" ColumnName="arrivalFlightId" />
+                <ScalarProperty Name="departureFlightId" ColumnName="departureFlightId" />
+                <ScalarProperty Name="movementId" ColumnName="movementId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartureOrderView">
+            <EntityTypeMapping TypeName="eAirlinesModel.DepartureOrderView">
+              <MappingFragment StoreEntitySet="DepartureOrderView">
+                <ScalarProperty Name="scheduledTime" ColumnName="scheduledTime" />
+                <ScalarProperty Name="flightNumber" ColumnName="flightNumber" />
+                <ScalarProperty Name="departure_id" ColumnName="departure_id" />
+                <ScalarProperty Name="departureFlightId" ColumnName="departureFlightId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="manni" ColumnName="manni" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="isFinished" ColumnName="isFinished" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

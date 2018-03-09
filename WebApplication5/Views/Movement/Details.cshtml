@@ -1,0 +1,102 @@
+﻿
+
+@{
+    ViewBag.Title = "ДЕТАЛИЗАЦИЯ";
+}
+
+<h2>ДЕТАЛИЗАЦИЯ</h2>
+
+<div>
+    <h4>НА ПРИЛЕТ</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                <div>ИМЯ</div>
+            </th>
+            <th>
+                <div>НАЧАЛО</div>
+            </th>
+            <th>
+                <div>КОНЕЦ</div>
+            </th>
+            <th>
+                <div>СТАТУС</div>
+            </th>
+            <th></th>
+        </tr>
+        @if (ViewData["arrOrderList"] != null){
+            foreach (var item in ViewData["arrOrderList"] as List<WebApplication5.Models.ArrivalOrderV>){
+                <tr>
+                    <td>
+                        @item.name
+                    </td>
+                    <td>
+                        @item.start_time
+                    </td>
+                    <td>
+                        @item.end_time
+                    </td>
+                    <td>
+                        @item.status
+                    </td>
+                </tr>
+            }
+        }
+       
+
+    </table>
+  
+</div>
+
+<div>
+    <h4>НА ВЫЛЕТ</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                <div>ИМЯ</div>
+            </th>
+            <th>
+                <div>НАЧАЛО</div>
+            </th>
+            <th>
+                <div>КОНЕЦ</div>
+            </th>
+            <th>
+                <div>СТАТУС</div>
+            </th>
+            <th></th>
+        </tr>
+        @if (ViewData["depOrderList"] != null)
+        {
+            foreach (var item in ViewData["depOrderList"] as List<WebApplication5.Models.DepartureOrderV>)
+            {
+                <tr>
+                    <td>
+                        @item.name
+                    </td>
+                    <td>
+                        @item.start_time
+                    </td>
+                    <td>
+                        @item.end_time
+                    </td>
+                    <td>
+                        @item.status
+                    </td>
+                </tr>
+            }
+        }
+
+
+    </table>
+
+</div>
+<p>
+ |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication5.Models.movementVFlights>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <div>HОМЕР РЕЙСА</div>
+        </th>
+        <th>
+            <div>ДАТА</div>
+        </th>
+        <th>
+            <div>АВИАКОМПАНИЯ</div>
+        </th>
+        <th>
+            <div>ВС</div>
+        </th>
+        <th>
+            <div>АЭРОПОРТ</div>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.arr_flightNumer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.arr_scheduleTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.airlineIATA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.registration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flight_from)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.arrivalFlightId }) |
+            @Html.ActionLink("ЗАКАЗЫ", "Details", new { arr_id=item.arrivalFlightId, dep_id=item.departureFlightId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.arrivalFlightId })
+        </td>
+    </tr>
+}
+
+</table>
