@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="eAirlinesDataset" targetNamespace="http://tempuri.org/eAirlinesDataset.xsd" xmlns:mstns="http://tempuri.org/eAirlinesDataset.xsd" xmlns="http://tempuri.org/eAirlinesDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="eAirlinesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="eAirlinesConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.eAirlinesConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="eAirlinesDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="eAirlinesDataset" msprop:Generator_UserDSName="eAirlinesDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ArrivalOrderView" msprop:Generator_TableClassName="ArrivalOrderViewDataTable" msprop:Generator_TableVarName="tableArrivalOrderView" msprop:Generator_TablePropName="ArrivalOrderView" msprop:Generator_RowDeletingName="ArrivalOrderViewRowDeleting" msprop:Generator_RowChangingName="ArrivalOrderViewRowChanging" msprop:Generator_RowEvHandlerName="ArrivalOrderViewRowChangeEventHandler" msprop:Generator_RowDeletedName="ArrivalOrderViewRowDeleted" msprop:Generator_UserTableName="ArrivalOrderView" msprop:Generator_RowChangedName="ArrivalOrderViewRowChanged" msprop:Generator_RowEvArgName="ArrivalOrderViewRowChangeEvent" msprop:Generator_RowClassName="ArrivalOrderViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isFinished" msprop:Generator_ColumnVarNameInTable="columnisFinished" msprop:Generator_ColumnPropNameInRow="isFinished" msprop:Generator_ColumnPropNameInTable="isFinishedColumn" msprop:Generator_UserColumnName="isFinished" type="xs:boolean" minOccurs="0" />
+              <xs:element name="isDeleted" msprop:Generator_ColumnVarNameInTable="columnisDeleted" msprop:Generator_ColumnPropNameInRow="isDeleted" msprop:Generator_ColumnPropNameInTable="isDeletedColumn" msprop:Generator_UserColumnName="isDeleted" type="xs:boolean" minOccurs="0" />
+              <xs:element name="flightNumber" msprop:Generator_ColumnVarNameInTable="columnflightNumber" msprop:Generator_ColumnPropNameInRow="flightNumber" msprop:Generator_ColumnPropNameInTable="flightNumberColumn" msprop:Generator_UserColumnName="flightNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="scheduledTime" msprop:Generator_ColumnVarNameInTable="columnscheduledTime" msprop:Generator_ColumnPropNameInRow="scheduledTime" msprop:Generator_ColumnPropNameInTable="scheduledTimeColumn" msprop:Generator_UserColumnName="scheduledTime" type="xs:dateTime" />
+              <xs:element name="manni" msprop:Generator_ColumnVarNameInTable="columnmanni" msprop:Generator_ColumnPropNameInRow="manni" msprop:Generator_ColumnPropNameInTable="manniColumn" msprop:Generator_UserColumnName="manni" type="xs:double" minOccurs="0" />
+              <xs:element name="start_time" msprop:Generator_ColumnVarNameInTable="columnstart_time" msprop:Generator_ColumnPropNameInRow="start_time" msprop:Generator_ColumnPropNameInTable="start_timeColumn" msprop:Generator_UserColumnName="start_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="end_time" msprop:Generator_ColumnVarNameInTable="columnend_time" msprop:Generator_ColumnPropNameInRow="end_time" msprop:Generator_ColumnPropNameInTable="end_timeColumn" msprop:Generator_UserColumnName="end_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="arrival_id" msprop:Generator_ColumnVarNameInTable="columnarrival_id" msprop:Generator_ColumnPropNameInRow="arrival_id" msprop:Generator_ColumnPropNameInTable="arrival_idColumn" msprop:Generator_UserColumnName="arrival_id" type="xs:long" minOccurs="0" />
+              <xs:element name="arrivalFlightId" msprop:Generator_ColumnVarNameInTable="columnarrivalFlightId" msprop:Generator_ColumnPropNameInRow="arrivalFlightId" msprop:Generator_ColumnPropNameInTable="arrivalFlightIdColumn" msprop:Generator_UserColumnName="arrivalFlightId" type="xs:long" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="movementsFlightsView" msprop:Generator_TableClassName="movementsFlightsViewDataTable" msprop:Generator_TableVarName="tablemovementsFlightsView" msprop:Generator_TablePropName="movementsFlightsView" msprop:Generator_RowDeletingName="movementsFlightsViewRowDeleting" msprop:Generator_RowChangingName="movementsFlightsViewRowChanging" msprop:Generator_RowEvHandlerName="movementsFlightsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="movementsFlightsViewRowDeleted" msprop:Generator_UserTableName="movementsFlightsView" msprop:Generator_RowChangedName="movementsFlightsViewRowChanged" msprop:Generator_RowEvArgName="movementsFlightsViewRowChangeEvent" msprop:Generator_RowClassName="movementsFlightsViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="registration" msprop:Generator_ColumnVarNameInTable="columnregistration" msprop:Generator_ColumnPropNameInRow="registration" msprop:Generator_ColumnPropNameInTable="registrationColumn" msprop:Generator_UserColumnName="registration">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="iataCode" msprop:Generator_ColumnVarNameInTable="columniataCode" msprop:Generator_ColumnPropNameInRow="iataCode" msprop:Generator_ColumnPropNameInTable="iataCodeColumn" msprop:Generator_UserColumnName="iataCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="arr_flightNumer" msprop:Generator_ColumnVarNameInTable="columnarr_flightNumer" msprop:Generator_ColumnPropNameInRow="arr_flightNumer" msprop:Generator_ColumnPropNameInTable="arr_flightNumerColumn" msprop:Generator_UserColumnName="arr_flightNumer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="arr_scheduleTime" msprop:Generator_ColumnVarNameInTable="columnarr_scheduleTime" msprop:Generator_ColumnPropNameInRow="arr_scheduleTime" msprop:Generator_ColumnPropNameInTable="arr_scheduleTimeColumn" msprop:Generator_UserColumnName="arr_scheduleTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="airlineIATA" msprop:Generator_ColumnVarNameInTable="columnairlineIATA" msprop:Generator_ColumnPropNameInRow="airlineIATA" msprop:Generator_ColumnPropNameInTable="airlineIATAColumn" msprop:Generator_UserColumnName="airlineIATA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MTOW" msprop:Generator_ColumnVarNameInTable="columnMTOW" msprop:Generator_ColumnPropNameInRow="MTOW" msprop:Generator_ColumnPropNameInTable="MTOWColumn" msprop:Generator_UserColumnName="MTOW" type="xs:int" minOccurs="0" />
+              <xs:element name="airportIATA" msprop:Generator_ColumnVarNameInTable="columnairportIATA" msprop:Generator_ColumnPropNameInRow="airportIATA" msprop:Generator_ColumnPropNameInTable="airportIATAColumn" msprop:Generator_UserColumnName="airportIATA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="airportICAO" msprop:Generator_ColumnVarNameInTable="columnairportICAO" msprop:Generator_ColumnPropNameInRow="airportICAO" msprop:Generator_ColumnPropNameInTable="airportICAOColumn" msprop:Generator_UserColumnName="airportICAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="airportName" msprop:Generator_ColumnVarNameInTable="columnairportName" msprop:Generator_ColumnPropNameInRow="airportName" msprop:Generator_ColumnPropNameInTable="airportNameColumn" msprop:Generator_UserColumnName="airportName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dep_flightNumber" msprop:Generator_ColumnVarNameInTable="columndep_flightNumber" msprop:Generator_ColumnPropNameInRow="dep_flightNumber" msprop:Generator_ColumnPropNameInTable="dep_flightNumberColumn" msprop:Generator_UserColumnName="dep_flightNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dep_schedTime" msprop:Generator_ColumnVarNameInTable="columndep_schedTime" msprop:Generator_ColumnPropNameInRow="dep_schedTime" msprop:Generator_ColumnPropNameInTable="dep_schedTimeColumn" msprop:Generator_UserColumnName="dep_schedTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="flight_to" msprop:Generator_ColumnVarNameInTable="columnflight_to" msprop:Generator_ColumnPropNameInRow="flight_to" msprop:Generator_ColumnPropNameInTable="flight_toColumn" msprop:Generator_UserColumnName="flight_to" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="flight_from" msprop:Generator_ColumnVarNameInTable="columnflight_from" msprop:Generator_ColumnPropNameInRow="flight_from" msprop:Generator_ColumnPropNameInTable="flight_fromColumn" msprop:Generator_UserColumnName="flight_from" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="arrivalFlightId" msprop:Generator_ColumnVarNameInTable="columnarrivalFlightId" msprop:Generator_ColumnPropNameInRow="arrivalFlightId" msprop:Generator_ColumnPropNameInTable="arrivalFlightIdColumn" msprop:Generator_UserColumnName="arrivalFlightId" type="xs:long" minOccurs="0" />
+              <xs:element name="departureFlightId" msprop:Generator_ColumnVarNameInTable="columndepartureFlightId" msprop:Generator_ColumnPropNameInRow="departureFlightId" msprop:Generator_ColumnPropNameInTable="departureFlightIdColumn" msprop:Generator_UserColumnName="departureFlightId" type="xs:long" minOccurs="0" />
+              <xs:element name="movementId" msprop:Generator_ColumnVarNameInTable="columnmovementId" msprop:Generator_ColumnPropNameInRow="movementId" msprop:Generator_ColumnPropNameInTable="movementIdColumn" msprop:Generator_UserColumnName="movementId" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DepartureOrderView" msprop:Generator_TableClassName="DepartureOrderViewDataTable" msprop:Generator_TableVarName="tableDepartureOrderView" msprop:Generator_TablePropName="DepartureOrderView" msprop:Generator_RowDeletingName="DepartureOrderViewRowDeleting" msprop:Generator_RowChangingName="DepartureOrderViewRowChanging" msprop:Generator_RowEvHandlerName="DepartureOrderViewRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartureOrderViewRowDeleted" msprop:Generator_UserTableName="DepartureOrderView" msprop:Generator_RowChangedName="DepartureOrderViewRowChanged" msprop:Generator_RowEvArgName="DepartureOrderViewRowChangeEvent" msprop:Generator_RowClassName="DepartureOrderViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isFinished" msprop:Generator_ColumnVarNameInTable="columnisFinished" msprop:Generator_ColumnPropNameInRow="isFinished" msprop:Generator_ColumnPropNameInTable="isFinishedColumn" msprop:Generator_UserColumnName="isFinished" type="xs:boolean" minOccurs="0" />
+              <xs:element name="isDeleted" msprop:Generator_ColumnVarNameInTable="columnisDeleted" msprop:Generator_ColumnPropNameInRow="isDeleted" msprop:Generator_ColumnPropNameInTable="isDeletedColumn" msprop:Generator_UserColumnName="isDeleted" type="xs:boolean" minOccurs="0" />
+              <xs:element name="manni" msprop:Generator_ColumnVarNameInTable="columnmanni" msprop:Generator_ColumnPropNameInRow="manni" msprop:Generator_ColumnPropNameInTable="manniColumn" msprop:Generator_UserColumnName="manni" type="xs:double" minOccurs="0" />
+              <xs:element name="start_time" msprop:Generator_ColumnVarNameInTable="columnstart_time" msprop:Generator_ColumnPropNameInRow="start_time" msprop:Generator_ColumnPropNameInTable="start_timeColumn" msprop:Generator_UserColumnName="start_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="end_time" msprop:Generator_ColumnVarNameInTable="columnend_time" msprop:Generator_ColumnPropNameInRow="end_time" msprop:Generator_ColumnPropNameInTable="end_timeColumn" msprop:Generator_UserColumnName="end_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="departureFlightId" msprop:Generator_ColumnVarNameInTable="columndepartureFlightId" msprop:Generator_ColumnPropNameInRow="departureFlightId" msprop:Generator_ColumnPropNameInTable="departureFlightIdColumn" msprop:Generator_UserColumnName="departureFlightId" type="xs:long" />
+              <xs:element name="departure_id" msprop:Generator_ColumnVarNameInTable="columndeparture_id" msprop:Generator_ColumnPropNameInRow="departure_id" msprop:Generator_ColumnPropNameInTable="departure_idColumn" msprop:Generator_UserColumnName="departure_id" type="xs:long" minOccurs="0" />
+              <xs:element name="flightNumber" msprop:Generator_ColumnVarNameInTable="columnflightNumber" msprop:Generator_ColumnPropNameInRow="flightNumber" msprop:Generator_ColumnPropNameInTable="flightNumberColumn" msprop:Generator_UserColumnName="flightNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="scheduledTime" msprop:Generator_ColumnVarNameInTable="columnscheduledTime" msprop:Generator_ColumnPropNameInRow="scheduledTime" msprop:Generator_ColumnPropNameInTable="scheduledTimeColumn" msprop:Generator_UserColumnName="scheduledTime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ArrivalOrderView" />
+      <xs:field xpath="mstns:arrivalFlightId" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="movementsFlightsView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:movementsFlightsView" />
+      <xs:field xpath="mstns:movementId" />
+    </xs:unique>
+    <xs:unique name="DepartureOrderView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DepartureOrderView" />
+      <xs:field xpath="mstns:id" />
+      <xs:field xpath="mstns:departureFlightId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

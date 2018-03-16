@@ -92,6 +92,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -225,6 +226,11 @@
     <Compile Include="Models\DepartureOrderView.cs">
       <DependentUpon>eAirlinesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\eAirlinesDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eAirlinesDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\eAirlinesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -281,6 +287,17 @@
     </EntityDeploy>
     <Content Include="Models\eAirlinesModel.edmx.diagram">
       <DependentUpon>eAirlinesModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\eAirlinesDataset.xsc">
+      <DependentUpon>eAirlinesDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Models\eAirlinesDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eAirlinesDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Models\eAirlinesDataset.xss">
+      <DependentUpon>eAirlinesDataset.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\amazon.pubxml" />
     <None Include="Properties\PublishProfiles\amazonWeb.pubxml" />
@@ -364,6 +381,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\SupplyList.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

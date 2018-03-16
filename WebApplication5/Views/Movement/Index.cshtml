@@ -48,7 +48,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.arrivalFlightId }) |
-            @Html.ActionLink("ЗАКАЗЫ", "Details", new { arr_id=item.arrivalFlightId, dep_id=item.departureFlightId }) |
+            @Html.ActionLink("ЗАКАЗЫ", "Details", new {mov_id = item.movementId, arr_id=item.arrivalFlightId, dep_id=item.departureFlightId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.arrivalFlightId })
         </td>
     </tr>

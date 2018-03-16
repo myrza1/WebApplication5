@@ -94,8 +94,9 @@
 
 </div>
 <p>
- |
-    @Html.ActionLink("Back to List", "Index")
+    |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Get Report PDF","Report", new { id = "PDF", mov_id = ViewData["mov_id"] }) |
 </p>
 
 
